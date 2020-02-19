@@ -105,7 +105,7 @@ a:target {
     display: none;
 }
 
-.nav {
+.nav, .nav ul#sub {
     background-color: rgb(0, 24, 46);
     width: 100%;
     overflow: hidden;
@@ -113,8 +113,12 @@ a:target {
 
 .nav a {
     color: white;
-    transition: 0.25s ease-in-out all;
     text-decoration: none;
+}
+
+.nav li {
+    color: white;
+    font-weight: 300;
 }
 
 .nav li:hover,
@@ -172,6 +176,24 @@ a#hamburgerBtn:hover {
     font-size: 24px;
 }
 
+.nav ul#mobile.open #dropdown {
+    padding: 15px 0 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav ul#mobile.open li#dropdown:hover, .nav ul#mobile.open li#dropdown:focus, .nav ul#mobile.open li#dropdown:target {
+    background-color: rgb(0, 24, 46);
+}
+
+.nav ul#mobile.open ul#sub li {
+    font-size: 18px;
+}
+
+.nav ul#mobile.open ul#sub li:before {
+    content: '- ';
+}
+
 
 /* SLICK Custom Styles (Override) */
 .imgs {
@@ -202,7 +224,7 @@ a#hamburgerBtn:hover {
 /* Card Styles */
 .cards {
     background-color: #f7f7f7;
-    padding: 60px 20px 80px;
+    padding: 60px 20px 80px
 }
 
 .cards h2 {
@@ -217,7 +239,10 @@ a#hamburgerBtn:hover {
     flex-wrap: wrap;
 }
 
-.cards .card-container .card {
+.cards .card-container a {
+    opacity: 75%;
+    transition: 0.2s ease all;
+
     box-shadow: 0 0 4px rgba(0, 0, 0, .2);
     width: 48%;
     margin: 10px 1%;
@@ -231,35 +256,42 @@ a#hamburgerBtn:hover {
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
+    text-decoration: none;
 }
 
-.cards .card#card-one {
+.cards .card-container a:hover, .cards .card-container a:target, .cards .card-container a:focus {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.cards a#card-one {
     background-image: url("../images/sunset-cruise.jpg");
 }
 
-.cards .card#card-two {
+.cards a#card-two {
     background-image: url("../images/blue-scene-cruise.jpg");
 }
 
-.cards .card#card-three {
+.cards a#card-three {
     background-image: url("../images/wine-cruise.jpg");
 }
 
-.cards .card#card-four {
+.cards a#card-four {
     background-image: url("../images/side-boat.jpg");
 }
 
-.cards .card .text {
+.cards a .text {
     background-color: rgba(0,0,0,.5);
     color: white;
     width: 100%;
     padding: 20px;
 }
 
-.cards .card .text h3 {
+.cards a .text h3 {
     color: white;
     font-size: 20px;
 }
+
 
 /* Footer Styles */
 footer {
@@ -407,7 +439,7 @@ form input[type="submit"]:focus {
     display: flex;
     justify-content: center; 
     align-items: center;
-    margin-right: 20px;
+    margin-right: 30px;
     width: 200px;
     max-width: 300px;
 }
@@ -418,8 +450,9 @@ form input[type="submit"]:focus {
 .search form button {
     width: 20px;
     padding: 5px 5px 5px 0;
+    margin-left: -45px;
     font-size: 24px;
-    color: white;
+    color: rgb(201, 201, 201);
     background: none;
     border: none;
     transition: 0.2s ease all;
@@ -473,8 +506,26 @@ form input[type="submit"]:focus {
         display: none;
     }
 
+    .nav ul#sub {
+        display: none;
+        position: absolute;
+        margin-top: 20px;
+        max-width: 200px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        z-index: 1;
+        text-align: center;
+    }
+    
+    .nav #dropdown:hover ul#sub, .nav #dropdown:focus ul#sub, .nav #dropdown:target ul#sub, .nav #dropdown:hover ul#sub li, .nav #dropdown:focus ul#sub li, .nav #dropdown:target ul#sub li {
+        display: block;
+    }
+
+    .nav #dropdown:hover ul#sub {
+        margin-left: -35px;
+    }
+
     /* Cards */
-    .cards .card-container .card {
+    .cards .card-container a {
         width: 31%;
         margin: 10px 1%;
     }
@@ -492,7 +543,7 @@ form input[type="submit"]:focus {
     }
 
     /* Cards */
-    .cards .card-container .card {
+    .cards .card-container a {
         width: 23%;
         margin: 10px 1%;
     }

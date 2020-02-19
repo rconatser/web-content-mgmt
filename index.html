@@ -40,9 +40,12 @@
                 <a href="cruises.html">
                     <li>Cruises</li>
                 </a>
-                <a href="agents.html">
-                    <li>Agents</li>
-                </a>
+                <li id="dropdown">Agents<span class="mdi mdi-chevron-down"></span>
+                    <ul id="sub">
+                        <a href="#"><li>Item One</li></a>
+                        <a href="#"><li>Item Two</li></a>
+                    </ul>
+                </li>
                 <a href="book.html">
                     <li>Book</li>
                 </a>
@@ -55,16 +58,19 @@
                 <a href="cruises.html">
                     <li>Cruises</li>
                 </a>
-                <a href="agents.html">
-                    <li>Agents</li>
-                </a>
+                <li id="dropdown">Agents <span class="mdi mdi-chevron-down"></span>
+                    <ul id="sub">
+                        <a href="#"><li>Item One</li></a>
+                        <a href="#"><li>Item Two</li></a>
+                    </ul>
+                </li>
                 <a href="book.html">
                     <li>Book</li>
                 </a>
             </ul>
             <div class="search">
                 <form type="POST" action="#">
-                    <input type="text" placeholder="Search..." value="" />
+                    <input type="search" placeholder="Search..." value="" />
                     <button type="submit"><span class="mdi mdi-magnify"></span></button>
                 </form>
             </div>
@@ -101,30 +107,30 @@
     <div class="container">
         <h2>Recent Blogs</h2>
         <div class="card-container">
-            <div class="card" id="card-one">
+            <a href="#" id="card-one">
                 <div class="text">
-                <h3>Sunset Adventures</h3>
-                <p>June 27, 2019</p>
-            </div>
-            </div>
-            <div class="card" id="card-two">
+                    <h3>Sunset Adventures</h3>
+                    <p>June 27, 2019</p>
+                </div>
+            </a>
+            <a href="#" id="card-two">
                 <div class="text">
-                <h3>Alaskan Cruises</h3>
-                <p>June 31, 2019</p>
-            </div>
-            </div>
-            <div class="card" id="card-three">
+                    <h3>Alaskan Cruises</h3>
+                    <p>June 31, 2019</p>
+                </div>
+            </a>
+            <a href="#" id="card-three">
                 <div class="text">
-                <h3>Wine by Sunset</h3>
-                <p>July 19, 2019</p>
-            </div>
-            </div>
-            <div class="card" id="card-four">
+                    <h3>Wine by Sunset</h3>
+                    <p>July 19, 2019</p>
+                </div>
+            </a>
+            <a href="#" id="card-four">
                 <div class="text">
-                <h3>Your Next Getaway</h3>
-                <p>August 2, 2019</p>
-            </div>
-            </div>
+                    <h3>Your Next Getaway</h3>
+                    <p>August 2, 2019</p>
+                </div>
+            </a>
         </div>
     </div>
     <div class="clear"></div>
@@ -152,7 +158,7 @@
             <p>Subscribe to our email list and stay up-to-date with our hottest offers and latest specials.</p>
             <form id="newsletter" type="POST" action="#">
                 <label for="email" id="email-label">Your Email</label>
-                <input type="text" id="email" placeholder="Your Email" />
+                <input type="text" id="email" placeholder="Your Email" required />
                 <input type="submit" value="Subscribe" />
             </form>
         </div>
