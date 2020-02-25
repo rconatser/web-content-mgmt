@@ -97,6 +97,10 @@ a:target {
     text-decoration: none;
 }
 
+.header .logo img {
+    max-width: 250px;
+}
+
 
 /* Nav */
 .nav li#dropdown .fa-chevron-down {
