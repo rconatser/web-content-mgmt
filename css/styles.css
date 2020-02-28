@@ -487,6 +487,10 @@ form input[type="submit"]:focus {
         justify-content: space-between;
     }
 
+    .header .logo img {
+        max-width: 175px;
+    }
+
 }
 
 /* End Tablet and Up Styles */
